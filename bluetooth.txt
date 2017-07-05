@@ -1,0 +1,32 @@
+WIRING for AT commands
+======================
+
+HC-05   USB2Serial
+=====   ==========
+TX  --- RX
+RX  --- TX
+GND --- GND
+VCC --- VCC
+Key _/ 
+
+
+SLAVE
+=====
+AT+ORGL ↩︎
+AT+NAME=LITTELARM ↩︎
+AT+CMODE=1 ↩︎
+AT+ROLE=0 ↩︎
+AT+PSWD=2121 ↩︎
+AT+UART=38400,1,0 ↩︎
+AT+ADDR ↩︎   (returns XXXX:XX:XXXXXX)
+
+
+MASTER
+======
+AT+ORGL ↩︎
+AT+NAME=CONTROLLER ↩︎
+AT+CMODE=0 ↩︎
+AT+ROLE=1 ↩︎
+AT+PSWD=2121 ↩︎
+AT+UART=38400,1,0 ↩︎
+AT+BIND=XXXX, XX, XXXXXX ↩︎
